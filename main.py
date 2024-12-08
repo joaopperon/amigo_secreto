@@ -1,9 +1,9 @@
-from core.settings import PARTICIPANTES
-from core.functions import sortear_nomes, enviar_email
+from core.settings import PARTICIPANTS
+from core.functions import draw_names, send_mail
 
 if __name__ == "__main__":
-    resultado = sortear_nomes()
-    for nome, amigo_secreto in resultado.items():
-        email = PARTICIPANTES[nome]
-        enviar_email(nome, email, amigo_secreto)
-        print(f"Email enviado para {nome}!")
+    result = draw_names()
+    for name, secret_santa in result.items():
+        email = PARTICIPANTS[name]
+        send_mail(name, email, secret_santa)
+        print(f"Email enviado para {name}!")
